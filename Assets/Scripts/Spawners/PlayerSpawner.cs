@@ -20,6 +20,6 @@ public class PlayerSpawner : MonoBehaviour
 
     private void ChangePosition(Vector3 startPosition)
     {
-        _player.transform.position = startPosition;
+        _player.transform.position = startPosition + new Vector3(0,1,1);
     }
 }

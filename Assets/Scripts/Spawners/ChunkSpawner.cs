@@ -1,57 +1,62 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 public class ChunkSpawner : MonoBehaviour
 {
     [SerializeField] private Chunk[] _chunks;
-    [SerializeField] private Vector3 _firstChunkSpawnPoint;
     [SerializeField] private GameObject[] _traps;
+    [SerializeField] private int _startingQuantity;
+    [SerializeField] private GameObject _player;
 
-    private List<Chunk> _spawnedChunks = new List<Chunk>();
+    private List<Chunk> _poolChunks = new List<Chunk>();
     private Chunk _firstChunk;
-    
+    private Chunk _lastSpawnedChunk;
+    private int _capacity = 10;
+    private Chunk chunk;
     
     public event UnityAction<Vector3> Spawned;
-
+    
     private void Start()
     {
-        _firstChunk = _chunks[Random.Range(0, _chunks.Length)];
-        Instantiate(_firstChunk,transform);
-        _firstChunk.transform.position = _firstChunkSpawnPoint;
-        _spawnedChunks.Add(_firstChunk);
+        Initialize();
+        _firstChunk = _poolChunks[0];
+        _firstChunk.transform.position = transform.position;
+        _firstChunk.gameObject.SetActive(true);
+        _lastSpawnedChunk = _firstChunk;
         
-        Spawned?.Invoke(_spawnedChunks[0].Start.position);
+        for (int i = 0; i < _startingQuantity; i++)
+        {
+            SpawnChunk();
+        }
         
-        for (int i = 0; i < 30; i++)
+        Spawned?.Invoke(_firstChunk.Start.position);
+    }
+
+    private void Update()
+    {
+        if (_player.transform.position.z > _lastSpawnedChunk.transform.position.z-85)
         {
             SpawnChunk();
         }
     }
-    
+
     private void SpawnChunk()
     {
-        Chunk newChunk =  Instantiate(_chunks[Random.Range(0, _chunks.Length)],transform);
-
-        newChunk.transform.position = _spawnedChunks[_spawnedChunks.Count - 1].End.position - newChunk.Start.position;
-            // new Vector3(0, 0, _spawnedChunks[_spawnedChunks.Count - 1].End.transform.position.z);
-        
-        Debug.Log(_spawnedChunks[_spawnedChunks.Count-1].End.localPosition.z);
-
-        
-        //RandomRotation(newChunk);
-            
-        _spawnedChunks.Add(newChunk);
+        if (TryGetObject(out Chunk chunk))
+        {
+            chunk.transform.position = Vector3.zero;
+            chunk.transform.position = _lastSpawnedChunk.End.position - chunk.Start.transform.position; 
+            chunk.gameObject.SetActive(true);
+            _lastSpawnedChunk = chunk;
+        }
     }
     
-
     private void RandomRotation(Chunk chunk)
     {
-        if (_spawnedChunks.Count % 2 == 0) 
+        if (_poolChunks.Count % 2 == 0) 
         {
             Vector3 newEnd = chunk.Start.transform.position;
 
@@ -59,5 +64,26 @@ public class ChunkSpawner : MonoBehaviour
             chunk.End.position = newEnd;
             chunk.transform.Rotate(0,180,0);
         }
+    }
+
+    private void Initialize()
+    {
+        for (int i = 0; i < _capacity / 2; i++) 
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Chunk spawned = Instantiate(_chunks[i],transform);
+                RandomRotation(spawned);
+                spawned.gameObject.SetActive(false);
+                _poolChunks.Add(spawned);
+            }
+        }
+    }
+    
+    private bool TryGetObject(out Chunk result)
+    {
+        result = _poolChunks.First(p => p.gameObject.activeSelf == false);
+
+        return result != null;
     }
 }

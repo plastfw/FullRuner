@@ -16,6 +16,7 @@ public class Mover : MonoBehaviour
     
     private Rigidbody _rigidbody;
     private Animator _animator;
+    private Transform _transform;
     
     public event UnityAction<float> Running;
     public event UnityAction Jumping;
@@ -23,6 +24,7 @@ public class Mover : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _transform = GetComponent<Transform>();
     }
     
     private void Update()
@@ -42,12 +44,12 @@ public class Mover : MonoBehaviour
             Run();
         }
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             MoveLeft();
         }
         
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             MoveRight();
         }
@@ -57,7 +59,8 @@ public class Mover : MonoBehaviour
     {
         Running?.Invoke(2);
         
-        _rigidbody.AddForce(Vector3.forward * _speed, ForceMode.Acceleration);
+        // _rigidbody.AddForce(Vector3.forward * _speed, ForceMode.Acceleration);
+        _transform.position = _transform.position + new Vector3(0, 0, 0.1f);
     }
 
     private void Jump()
@@ -65,18 +68,21 @@ public class Mover : MonoBehaviour
         if (IsGrounded())
         {
             Jumping?.Invoke();
-            _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Acceleration);
+            // _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Acceleration);
+            _transform.position = _transform.position + new Vector3(0, 1, 0);
         }
     }
 
     private void MoveLeft()
     {
-        _rigidbody.AddForce(Vector3.left * _speed, ForceMode.Acceleration);
+        _transform.position = _transform.position - new Vector3(1, 0, 0);
+        // _rigidbody.AddForce(Vector3.left * _speed, ForceMode.Acceleration);
     }
     
     private void MoveRight()
     {
-        _rigidbody.AddForce(Vector3.right * _speed, ForceMode.Acceleration);
+        _transform.position = _transform.position + new Vector3(1, 0, 0);
+        // _rigidbody.AddForce(Vector3.right * _speed, ForceMode.Acceleration);
     }
 
     private void NormalizedSpeed()
