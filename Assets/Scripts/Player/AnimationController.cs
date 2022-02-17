@@ -13,12 +13,14 @@ public class AnimationController : MonoBehaviour
     {
         _mover.Jumping += OnJumping;
         _mover.Running += OnRunning;
+        _mover.HorizontalMove += OnHorizontalMoving;
     }
 
     private void OnDisable()
     {
         _mover.Jumping -= OnJumping;
         _mover.Running -= OnRunning;
+        _mover.HorizontalMove -= OnHorizontalMoving;
     }
 
     private void OnRunning(float speed)
@@ -29,5 +31,10 @@ public class AnimationController : MonoBehaviour
     private void OnJumping()
     {
         _animator.SetTrigger("Jump");
+    }
+
+    private void OnHorizontalMoving(float value)
+    {
+        _animator.SetFloat("HorizontalMove",value);
     }
 }

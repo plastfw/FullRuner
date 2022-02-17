@@ -10,6 +10,7 @@ public class ChunkSpawner : MonoBehaviour
     [SerializeField] private GameObject[] _traps;
     [SerializeField] private int _startingQuantity;
     [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _container;
 
     private List<Chunk> _poolChunks = new List<Chunk>();
     private Chunk _firstChunk;
@@ -72,7 +73,7 @@ public class ChunkSpawner : MonoBehaviour
         {
             for (int j = 0; j < 2; j++)
             {
-                Chunk spawned = Instantiate(_chunks[i],transform);
+                Chunk spawned = Instantiate(_chunks[i],_container.transform);
                 RandomRotation(spawned);
                 spawned.gameObject.SetActive(false);
                 _poolChunks.Add(spawned);

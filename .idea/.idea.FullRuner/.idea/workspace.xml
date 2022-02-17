@@ -24,17 +24,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Animations/PlayerAnimationsController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationsController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Chunk.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ChunkSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/Tracking.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Test Spawner/ObjectPool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Test Spawner/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/PlayerSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk/Chunk.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/PlayerSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/ChunkSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="24t4nr0mVMkpcS51AVWOrEftj5R" />
@@ -86,6 +86,9 @@
       <workItem from="1644746300272" duration="1687000" />
       <workItem from="1644763082514" duration="14548000" />
       <workItem from="1644835166477" duration="25944000" />
+      <workItem from="1644920616391" duration="1357000" />
+      <workItem from="1645008948331" duration="19211000" />
+      <workItem from="1645093962128" duration="16619000" />
     </task>
     <servers />
   </component>
