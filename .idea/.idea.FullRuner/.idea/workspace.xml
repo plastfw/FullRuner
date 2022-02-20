@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/../../UnityProjects/Swamp Attack/Assets/Scripts/UI/MoneyBalance.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test Spawner/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnityProjects/Swamp Attack/Assets/Scripts/UI/Bar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnityProjects/Swamp Attack/Assets/Scripts/UI/HealthBar.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawners/PlayerSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnityProjects/Swamp Attack/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
@@ -35,6 +36,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/ChunkSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInput.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="24t4nr0mVMkpcS51AVWOrEftj5R" />
@@ -89,6 +91,10 @@
       <workItem from="1644920616391" duration="1357000" />
       <workItem from="1645008948331" duration="19211000" />
       <workItem from="1645093962128" duration="16619000" />
+      <workItem from="1645134469596" duration="1227000" />
+      <workItem from="1645137468096" duration="774000" />
+      <workItem from="1645176471217" duration="1481000" />
+      <workItem from="1645357128438" duration="8195000" />
     </task>
     <servers />
   </component>
