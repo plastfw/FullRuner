@@ -158,11 +158,10 @@ MonoBehaviour:
   - {fileID: 5531745737372173617, guid: f8132f716cb14bc4e93cf438690d527a, type: 3}
   - {fileID: 8546654973968798226, guid: 0917127b17d4bef4b910faea6df87304, type: 3}
   - {fileID: 7220849041109727753, guid: dad4d3b9d52de5a418540e088d6f5db9, type: 3}
-  _traps:
-  - {fileID: 428470525755709727, guid: c966ad36d84ade64db5b8f281791a05a, type: 3}
+  _container: {fileID: 959750281}
+  _capacity: 10
   _startingQuantity: 5
   _player: {fileID: 862904318}
-  _container: {fileID: 959750281}
 --- !u!4 &140870991
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &628980925
 PrefabInstance:
@@ -421,6 +420,10 @@ PrefabInstance:
       propertyPath: _horizontalSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 713597578870391229, guid: 286d5609fa9ff794693e045653f9cc47, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 713597578870391230, guid: 286d5609fa9ff794693e045653f9cc47, type: 3}
       propertyPath: m_Drag
       value: 0
@@ -443,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4250700942452284117, guid: 286d5609fa9ff794693e045653f9cc47, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4250700942452284117, guid: 286d5609fa9ff794693e045653f9cc47, type: 3}
       propertyPath: m_LocalPosition.x

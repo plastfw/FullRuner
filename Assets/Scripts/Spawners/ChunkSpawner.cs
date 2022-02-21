@@ -1,22 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChunkSpawner : MonoBehaviour
+public class ChunkSpawner : ChunkPool
 {
-    [SerializeField] private Chunk[] _chunks;
-    [SerializeField] private GameObject[] _traps;
     [SerializeField] private int _startingQuantity;
     [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _container;
 
-    private List<Chunk> _poolChunks = new List<Chunk>();
     private Chunk _firstChunk;
     private Chunk _lastSpawnedChunk;
-    private int _capacity = 10;
-    private Chunk chunk;
+    // private int _capacity = 10;
     
     public event UnityAction<Vector3> Spawned;
     
@@ -53,38 +45,5 @@ public class ChunkSpawner : MonoBehaviour
             chunk.gameObject.SetActive(true);
             _lastSpawnedChunk = chunk;
         }
-    }
-    
-    private void RandomRotation(Chunk chunk)
-    {
-        if (_poolChunks.Count % 2 == 0) 
-        {
-            Vector3 newEnd = chunk.Start.transform.position;
-
-            chunk.Start.position = chunk.End.position;
-            chunk.End.position = newEnd;
-            chunk.transform.Rotate(0,180,0);
-        }
-    }
-
-    private void Initialize()
-    {
-        for (int i = 0; i < _capacity / 2; i++) 
-        {
-            for (int j = 0; j < 2; j++)
-            {
-                Chunk spawned = Instantiate(_chunks[i],_container.transform);
-                RandomRotation(spawned);
-                spawned.gameObject.SetActive(false);
-                _poolChunks.Add(spawned);
-            }
-        }
-    }
-    
-    private bool TryGetObject(out Chunk result)
-    {
-        result = _poolChunks.First(p => p.gameObject.activeSelf == false);
-
-        return result != null;
     }
 }
