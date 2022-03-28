@@ -1,13 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
-using Debug = UnityEngine.Debug;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Mover : MonoBehaviour

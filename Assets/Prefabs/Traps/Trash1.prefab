@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 401171404645857735}
   - component: {fileID: 5353549382383141656}
   - component: {fileID: 329578945170971865}
-  - component: {fileID: 7424060697665781093}
   - component: {fileID: 5799945617520127693}
   m_Layer: 0
   m_Name: SM_Prop_RubbishBin_02 (1) 1
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7424060697665781093
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883758346770746955}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7405104, y: 1.1158774, z: 1.0160251}
-  m_Center: {x: 0, y: 0.5579387, z: 0.23029524}
 --- !u!114 &5799945617520127693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +185,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2788471257649943757}
+  - component: {fileID: -5410023001341127951}
+  - component: {fileID: 854773347139181576}
   m_Layer: 0
   m_Name: Trash1
   m_TagString: Untagged
@@ -221,3 +209,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5410023001341127951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212015693161510158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2afc8842ddd88842bf7d307222cdee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &854773347139181576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212015693161510158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1562972, y: 0.7754555, z: 1}
+  m_Center: {x: 0.56288123, y: 0.38362694, z: 0}

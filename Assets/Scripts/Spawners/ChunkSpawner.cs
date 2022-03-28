@@ -8,9 +8,8 @@ public class ChunkSpawner : ChunkPool
 
     private Chunk _firstChunk;
     private Chunk _lastSpawnedChunk;
-    // private int _capacity = 10;
     
-    public event UnityAction<Vector3> Spawned;
+    public event UnityAction<Chunk> Spawned;
     
     private void Start()
     {
@@ -20,30 +19,33 @@ public class ChunkSpawner : ChunkPool
         _firstChunk.gameObject.SetActive(true);
         _lastSpawnedChunk = _firstChunk;
         
+        
         for (int i = 0; i < _startingQuantity; i++)
         {
             SpawnChunk();
         }
         
-        Spawned?.Invoke(_firstChunk.Start.position);
+        Spawned?.Invoke(_firstChunk);
     }
 
     private void Update()
     {
-        if (_player.transform.position.z > _lastSpawnedChunk.transform.position.z-85)
-        {
-            SpawnChunk();
-        }
+        SpawnChunk();
     }
 
     private void SpawnChunk()
     {
-        if (TryGetObject(out Chunk chunk))
+
+        if (_player.transform.position.z > _lastSpawnedChunk.transform.position.z - 85)
         {
-            chunk.transform.position = Vector3.zero;
-            chunk.transform.position = _lastSpawnedChunk.End.position - chunk.Start.transform.position; 
-            chunk.gameObject.SetActive(true);
-            _lastSpawnedChunk = chunk;
+            if (TryGetObject(out Chunk chunk))
+            {
+                chunk.transform.position = Vector3.zero;
+                chunk.transform.position = _lastSpawnedChunk.End.position - chunk.Start.transform.position; 
+                chunk.gameObject.SetActive(true);
+                _lastSpawnedChunk = chunk;
+            }
         }
+
     }
 }

@@ -15,8 +15,8 @@ public class PlayerSpawner : MonoBehaviour
         _chunkSpawner.Spawned -= ChangePosition;
     }
 
-    private void ChangePosition(Vector3 startPosition)
+    private void ChangePosition(Chunk chunk)
     {
-        _player.transform.position = startPosition + new Vector3(0,0,5);
+        _player.transform.position = chunk.Start.position + new Vector3(0,0,5);
     }
 }
