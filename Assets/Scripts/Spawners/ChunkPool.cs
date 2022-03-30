@@ -17,7 +17,7 @@ public class ChunkPool : MonoBehaviour
             for (int j = 0; j < 2; j++)
             {
                 Chunk spawned = Instantiate(_chunks[i],_container.transform);
-                RandomRotation(spawned);
+                TryFlip(spawned);
                 spawned.gameObject.SetActive(false);
                 _poolChunks.Add(spawned);
             }
@@ -31,7 +31,7 @@ public class ChunkPool : MonoBehaviour
         return result != null;
     }
     
-    protected void RandomRotation(Chunk chunk)
+    protected void TryFlip(Chunk chunk)
     {
         if (_poolChunks.Count % 2 == 0) 
         {
