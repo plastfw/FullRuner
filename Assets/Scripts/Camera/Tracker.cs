@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tracking : MonoBehaviour
+public class Tracker : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     [SerializeField] private float _yOffset;
@@ -11,7 +11,7 @@ public class Tracking : MonoBehaviour
         transform.position = _player.position;
     }
 
-    void Update()
+    private void Update()
     {
         transform.position = new Vector3(transform.position.x, 0 + _yOffset, _player.position.z + _zOffset);
     }

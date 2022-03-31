@@ -30,7 +30,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ChunkSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Test Spawner/ObjectPool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Test Spawner/Spawner.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/ChunkSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/PlayerSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RoadPattern/Trap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RoadPattern/Point.cs" />
@@ -41,13 +40,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/Tracking.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk/Chunk.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ChunkDestroyer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInput.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChoosePattern.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RoadPattern/RoadPattern.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/ChunkPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/Tracker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawners/ChunkSpawner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="24t4nr0mVMkpcS51AVWOrEftj5R" />
@@ -117,6 +119,7 @@
       <workItem from="1648019060929" duration="7490000" />
       <workItem from="1648444152164" duration="4522000" />
       <workItem from="1648627342695" duration="155000" />
+      <workItem from="1648631672338" duration="325000" />
     </task>
     <servers />
   </component>

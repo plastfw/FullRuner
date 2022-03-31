@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
 
         if (_jumpValue > 0)
         {
-            _playerMover.JumpLogic();
+            _playerMover.Jump();
         }
     }
 

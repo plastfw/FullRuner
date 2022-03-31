@@ -32,7 +32,7 @@ public class Mover : MonoBehaviour
         Running?.Invoke(2);
     }
     
-    public void JumpLogic()
+    public void Jump()
     {
         if (IsGrounded())
         {

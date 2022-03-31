@@ -6,18 +6,18 @@ public class ChunkSpawner : ChunkPool
     [SerializeField] private int _startingQuantity;
     [SerializeField] private GameObject _player;
 
-    private Chunk _firstChunk;
-    private Chunk _lastSpawnedChunk;
+    private Chunk _first;
+    private Chunk _lastSpawned;
     
     public event UnityAction<Chunk> Spawned;
     
     private void Start()
     {
         Initialize();
-        _firstChunk = _poolChunks[0];
-        _firstChunk.transform.position = transform.position;
-        _firstChunk.gameObject.SetActive(true);
-        _lastSpawnedChunk = _firstChunk;
+        _first = _poolChunks[0];
+        _first.transform.position = transform.position;
+        _first.gameObject.SetActive(true);
+        _lastSpawned = _first;
         
         
         for (int i = 0; i < _startingQuantity; i++)
@@ -25,7 +25,7 @@ public class ChunkSpawner : ChunkPool
             SpawnChunk();
         }
         
-        Spawned?.Invoke(_firstChunk);
+        Spawned?.Invoke(_first);
     }
 
     private void Update()
@@ -36,14 +36,14 @@ public class ChunkSpawner : ChunkPool
     private void SpawnChunk()
     {
 
-        if (_player.transform.position.z > _lastSpawnedChunk.transform.position.z - 85)
+        if (_player.transform.position.z > _lastSpawned.transform.position.z - 85)
         {
             if (TryGetObject(out Chunk chunk))
             {
                 chunk.transform.position = Vector3.zero;
-                chunk.transform.position = _lastSpawnedChunk.End.position - chunk.Start.transform.position; 
+                chunk.transform.position = _lastSpawned.End.position - chunk.Start.transform.position; 
                 chunk.gameObject.SetActive(true);
-                _lastSpawnedChunk = chunk;
+                _lastSpawned = chunk;
             }
         }
 
